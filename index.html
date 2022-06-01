@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet"/>
+    <title>Momentum App</title>
+  </head>
+  <body>
+    <time id="time"></time>
+    <h1>
+      <span id="greeting"></span>
+      <span id="name" contenteditable="true">Limneo</span>
+    </h1>
+
+    <h2>What is your Focus for Today?</h2>
+    <h2 id="focus" contenteditable="true">Make Cool Videos</h2>
+
+    <div class="bottom-row">
+      <div class="bottom-left">
+        <i class="fa-solid fa-gear"></i>
+      </div>
+      <div class="bottom-middle">
+        <div class="content">
+          <div class="quotearea">
+            <p id="quote">"The greatest glory in living lies not in never falling, but in rising every time we fall."</p>
+            <button><i class="fa-solid fa-circle-plus"></i></button>
+            <button onclick="newQuote()"><i class="fa-solid fa-arrows-rotate"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-right">  
+        <div id="target">
+          <main class="app">
+            <nav class="nav">
+              <a class="nav__item active dropntn" onclick="myFunction();">Inbox <i class="fa-solid fa-angle-down" ></i></a>
+                <div id="myDropdown" class="dropdown-content">
+                  <a href="#inbox">Inbox</a>
+                  <a href="#today">Today</a>
+                  <a href="#complete">Complete</a>
+                  <a href="#newlist">+ New List</a>
+                </div>
+              <a href="" class="nav__item">Active</a>
+              <a href="" class="nav__item">Complete</a>
+            </nav>
+            <h3>Active</h3>
+            <ul id="incomplete-tasks" class="list">
+              <li class="item">
+                <label class="item__checkbox item__checkbox--1"><input type="checkbox"><i class="fas fa-check"></i></label>Lorem ipsum dolor sit<button class="item__delete"><i class="fas fa-trash-alt"></i></button>
+              </li>
+              <li class="item">
+                <label class="item__checkbox item__checkbox--1"><input type="checkbox"><i class="fas fa-check"></i></label>Lorem ipsum dolor sit<button class="item__delete"><i class="fas fa-trash-alt"></i></button>
+              </li>
+            </ul>
+              <h3>Completed</h3>
+              <ul id="completed-tasks">
+                <li class="item done">
+                  <label class="item__checkbox item__checkbox--2"><input checked type="checkbox"><i class="fas fa-check"></i></label>Lorem ipsum dolor si<button class="item__delete"><i class="fas fa-trash-alt"></i></button></li>
+              </ul>
+                <div class="add">
+                  <input id="new-task" placeholder="New Todo" type="text" class="add__input"><button><b>ADD</b></button>
+                </div>
+          </main>
+        </div>
+        <!-- <div id="inboxdropdown"></div> -->
+        <span class="toggle" onclick="toggle_visibility('target');"><b>ToDo</b></span>
+      </div>
+      
+    </div>
+    <script src="https://kit.fontawesome.com/f98ec32b38.js" crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
