@@ -46,7 +46,7 @@
 
 #target {
   background-color: #fbfbfb;
-  height: 380px;
+  min-height: 380px;
   width: 300px;
   padding: 12px;
   position: absolute;
