@@ -1,0 +1,270 @@
+#time {
+  font-size: 25vmin;
+}
+
+.bottom-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 97%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+.bottom-left {
+  font-size: 4vmin;
+  cursor: pointer;
+}
+
+.bottom-right {
+  font-size: 4vmin;
+  cursor: pointer;
+}
+
+.quotearea #quote {
+  font-size: 3.5vmin;
+  margin-bottom: 1vmin;
+}
+
+.quotearea button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 3.5vmin;
+  border-radius: 20px;
+  background: transparent;
+  color: white;
+  margin-bottom: 1vmin;
+}
+
+#target {
+  background-color: #fbfbfb;
+  height: 380px;
+  width: 300px;
+  padding: 12px;
+  position: absolute;
+  right: 0;
+  bottom: 3.2rem;
+  border-radius: 10px;
+  cursor: default;
+  display: none;
+  color: black;
+  /* Heading */
+  /* New Task */
+  /* Task list */
+  /* Completed */
+  /* Edit Task */
+}
+
+#target h2 {
+  text-align: left;
+  padding-top: 2px;
+  margin-bottom: 0px;
+  font-size: 1.3rem;
+}
+
+#target ul {
+  margin: 0;
+  padding: 0;
+}
+
+#target ul li * {
+  float: left;
+}
+
+#target li,
+#target h3 {
+  clear: both;
+  list-style: none;
+}
+
+#target input,
+#target button {
+  outline: none;
+}
+
+#target button {
+  background: none;
+  border: 0px;
+  color: #888;
+  font-size: 15px;
+  width: 60px;
+  margin: 5px 0 0;
+  cursor: pointer;
+}
+
+#target button:hover {
+  color: #333;
+}
+
+#target h3,
+#target label[for='new-task'] {
+  color: #333;
+  font-weight: 700;
+  font-size: 15px;
+  border-bottom: 2px solid #333;
+  padding: 5px 0 5px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#target input[type="text"] {
+  margin: 0;
+  font-size: 18px;
+  line-height: 18px;
+  height: 18px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 6px;
+  font-family: Lato, sans-serif;
+  color: #888;
+}
+
+#target input[type="text"]:focus {
+  color: #333;
+}
+
+#target label[for='new-task'] {
+  display: block;
+  margin: 0 0 20px;
+}
+
+#target input#new-task {
+  float: left;
+  width: 215px;
+  margin: 10px 0px 0px;
+}
+
+#target p > button:hover {
+  color: #0FC57C;
+}
+
+#target li {
+  overflow: hidden;
+  padding: 0px 0;
+  border-bottom: 1px solid #eee;
+}
+
+#target li input[type="checkbox"] {
+  margin: 0 10px;
+  position: relative;
+  top: 17.2px;
+}
+
+#target li label {
+  font-size: 15px;
+  line-height: 46.2px;
+  width: 180px;
+  padding: 0 0 0 11px;
+}
+
+#target li input[type="text"] {
+  width: 180px;
+  font-size: 15px;
+  margin-top: 12px;
+  line-height: 30px;
+}
+
+#target li .delete:hover {
+  color: #CF2323;
+}
+
+#target #completed-tasks label {
+  text-decoration: line-through;
+  color: #888;
+}
+
+#target ul li input[type=text] {
+  display: none;
+}
+
+#target ul li.editMode input[type=text] {
+  display: block;
+}
+
+#target ul li.editMode label {
+  display: none;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Quicksand, sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  height: 100vh;
+  background-size: cover;
+  color: black;
+}
+
+h1 {
+  margin-bottom: 2vmin;
+  font-size: 10vmin;
+}
+
+h2 {
+  margin-bottom: 1vmin;
+  opacity: 0.8;
+  font-size: 6vmin;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: #3498DB;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 2.2rem;
+  left: 1.3rem;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  font-size: 16px;
+  text-align: left;
+  overflow: auto;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}

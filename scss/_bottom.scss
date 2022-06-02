@@ -1,0 +1,19 @@
+.bottom-row {
+  display: flex;
+  width: 97%;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 20px;
+  position: absolute;
+  bottom: 0;
+}
+
+.bottom-left {
+  font-size: 4vmin;
+  cursor: pointer;
+}
+
+.bottom-right {
+  font-size: 4vmin;
+  cursor: pointer;
+}

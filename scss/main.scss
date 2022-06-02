@@ -1,0 +1,75 @@
+@import 'config';
+@import 'utilities';
+@import 'bottom';
+@import 'quotes';
+@import 'todo';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: $font-stack;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  background-size: cover;
+  color: black;
+}
+
+h1 {
+    margin-bottom: 2vmin;
+    font-size: 10vmin;
+  }
+
+h2 {
+    margin-bottom: 1vmin;
+    opacity: 0.8;
+    font-size: 6vmin;
+  }
+
+// Nav for Todo List
+
+// Inbox Dropdown
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  background-color: #3498DB;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 2.2rem;
+  left: 1.3rem;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  font-size: 16px;
+  text-align: left;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.show {
+  display: block;
+}
+
+@import 'mobile';
