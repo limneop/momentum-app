@@ -6,6 +6,8 @@
   margin: 0 20px;
   position: absolute;
   bottom: 0;
+  min-height: 56.5px;
+  min-height: 102px;
 }
 
 .bottom-left {
@@ -15,5 +17,5 @@
 
 .bottom-right {
   font-size: 4vmin;
-  cursor: pointer;
+  cursor: pointer;  
 }

@@ -16,6 +16,8 @@
   margin: 0 20px;
   position: absolute;
   bottom: 0;
+  min-height: 56.5px;
+  min-height: 102px;
 }
 
 .bottom-left {
@@ -28,20 +30,31 @@
   cursor: pointer;
 }
 
-.quotearea #quote {
-  font-size: 3.5vmin;
-  margin-bottom: 1vmin;
-}
-
 .quotearea button {
   border: none;
   outline: none;
   cursor: pointer;
-  font-size: 3.5vmin;
+  font-size: 3.2vmin;
   border-radius: 20px;
   background: transparent;
-  color: white;
   margin-bottom: 1vmin;
+  color: white;
+}
+
+.quotearea h2 {
+  font-size: 3.2vmin;
+}
+
+#quote {
+  font-size: 3.2vmin;
+  margin-bottom: 1vmin;
+}
+
+#addquote {
+  font-size: 3.2vmin;
+  margin-bottom: 1vmin;
+  border-bottom: 2px solid;
+  display: none;
 }
 
 #target {
@@ -51,7 +64,7 @@
   padding: 12px;
   position: absolute;
   right: 0;
-  bottom: 3.2rem;
+  bottom: 4rem;
   border-radius: 10px;
   cursor: default;
   display: none;
@@ -94,9 +107,8 @@
   background: none;
   border: 0px;
   color: #888;
-  font-size: 15px;
+  font-size: 18px;
   width: 60px;
-  margin: 5px 0 0;
   cursor: pointer;
 }
 
@@ -115,7 +127,7 @@
   text-transform: uppercase;
 }
 
-#target input[type="text"] {
+#target input [type="text"] {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -124,11 +136,10 @@
   border: 1px solid #ddd;
   background: #fff;
   border-radius: 6px;
-  font-family: Lato, sans-serif;
   color: #888;
 }
 
-#target input[type="text"]:focus {
+#target input input[type="text"]:focus {
   color: #333;
 }
 
@@ -170,11 +181,15 @@
   width: 180px;
   font-size: 15px;
   margin-top: 12px;
-  line-height: 30px;
+  line-height: 20px;
 }
 
 #target li .delete:hover {
   color: #CF2323;
+}
+
+#target li button {
+  margin-top: 3.5px;
 }
 
 #target #completed-tasks label {
@@ -219,7 +234,6 @@ body {
   text-align: center;
   height: 100vh;
   background-size: cover;
-  color: black;
 }
 
 h1 {
@@ -233,38 +247,13 @@ h2 {
   font-size: 6vmin;
 }
 
-.dropdown {
-  position: relative;
-  display: inline-block;
-  background-color: #3498DB;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  top: 2.2rem;
-  left: 1.3rem;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  font-size: 16px;
-  text-align: left;
-  overflow: auto;
-  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
-
-.show {
-  display: block;
+input#focus {
+  border-bottom: 2px solid;
+  margin-bottom: 1vmin;
+  opacity: 0.8;
+  font-size: 6vmin;
+  background-color: transparent;
+  border: 0px solid;
+  text-align: center;
+  color: white;
 }

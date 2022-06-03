@@ -39,6 +39,8 @@ function setBgGreet() {
     // Morning
     document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
     greeting.textContent = 'Good Morning, ';
+		document.body.style.color = 'black';
+
   } else if (hour < 18) {
     // Afternoon
     document.body.style.backgroundImage = "url('https://images5.alphacoders.com/382/382894.jpg')";
@@ -97,16 +99,41 @@ function setFocus(e) {
   }
 }
 
+// Get Add quote
+function getAddquote() {
+  if (localStorage.getItem('addquote') === null) {
+    addquote.textContent = 'Add Quote';
+  } else {
+    addquote.textContent = localStorage.getItem('addquote');
+  }
+}
+
+// Set Add quote
+function setAddquote(e) {
+  if (e.type === 'keypress') {
+    // Make sure enter is pressed
+    if (e.which == 13 || e.keyCode == 13) {
+      localStorage.setItem('addquote', e.target.innerText);
+      addquote.blur();
+    }
+  } else {
+    localStorage.setItem('addquote', e.target.innerText);
+  }
+}
+
 name.addEventListener('keypress', setName);
 name.addEventListener('blur', setName);
 focus.addEventListener('keypress', setFocus);
 focus.addEventListener('blur', setFocus);
+addquote.addEventListener('keypress', setAddquote);
+addquote.addEventListener('blur', setAddquote);
 
 // Run
 showTime();
 setBgGreet();
 getName();
 getFocus();
+getAddquote();
 
 
 // Quotes Generator
@@ -125,6 +152,15 @@ function newQuote() {
   document.getElementById('quote').innerHTML = quotes[randomNumber];
 }
 
+// Show Add Quotes
+
+function clickQuotes() {
+	var e = document.getElementById("addquote");
+	e.style.display = ((e.style.display!='none') ? 'none' : 'block');
+}
+
+
+
 // To-Do
 
 function toggle_visibility(id) {
@@ -132,27 +168,7 @@ function toggle_visibility(id) {
   e.style.display = ((e.style.display!='none') ? 'none' : 'block');
   }
 
-// Inbox Dropdown
 
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.fa-solid.fa-angle-down')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
 
 // Adding List
 var taskInput = document.getElementById("new-task"); //new-task
@@ -160,7 +176,7 @@ var addButton = document.getElementsByTagName("button")[2]; //first button
 var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
 var completedTasksHolder = document.getElementById("completed-tasks"); //completed-tasks
 
-//New Task List Item
+//New Task List Item	
 var createNewTaskElement = function(taskString) {
 	//Create List Item
 	var listItem = document.createElement("li");
@@ -282,10 +298,6 @@ var bindTaskEvents = function(taskListItem, checkBoxEventHandler) {
 	checkBox.onchange = checkBoxEventHandler;
 }
 
-// var ajaxRequest = function() {
-// 	console.log("AJAX request");
-// }
-
 //Set the click handler to the addTask function
 addButton.addEventListener("click", addTask);
 //addButton.addEventListener("click", ajaxRequest);
@@ -300,4 +312,25 @@ for (var i = 0; i < incompleteTasksHolder.children.length; i++) {
 for (var i = 0; i < completedTasksHolder.children.length; i++) {
 	//bind events to list item's children (taskIncomplete)
 	bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
+}
+
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+	
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.fa-solid.fa-angle-down')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
 }

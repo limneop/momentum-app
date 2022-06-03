@@ -1,18 +1,30 @@
 .quotearea {
-
-  #quote {
-    font-size: 3.5vmin;
-    margin-bottom: 1vmin;
-  }
+  
 
   button {
     border: none;
     outline: none;
     cursor: pointer;
-    font-size: 3.5vmin;
+    font-size: 3.2vmin;
     border-radius: 20px;
     background: transparent;
-    color: white;
     margin-bottom: 1vmin;
+    color: white;
   }
+
+  h2 {
+    font-size: 3.2vmin;
+  }
+} 
+
+#quote {
+  font-size: 3.2vmin;
+  margin-bottom: 1vmin;
+}
+
+#addquote {
+  font-size: 3.2vmin;
+  margin-bottom: 1vmin;
+  border-bottom: 2px solid;
+  display: none;
 }
