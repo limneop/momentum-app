@@ -4,8 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/main.css" />
+    <link rel="stylesheet" href="./css/main.css" />
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/f98ec32b38.js" crossorigin="anonymous"></script>
+    <script src="./js/time.js" defer></script>
+    <script src="./js/name.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/focus.js" defer></script>
     <title>Momentum App</title>
   </head>
   <body>
@@ -17,59 +22,63 @@
       <span id="name" contenteditable="true">Limneo</span>
     </h1>
 
-    <h2>What is your Focus for Today?</h2>
-    
-    <input type="text" id="focus" required aria-label="add">
+    <div class="focus">
+      <h2 data_todays_input>What is your Focus for Today?</h2>
+      <div class="focus_container_entry">
+        <div>
+          <input type="text" id="focus" required aria-label="add">
+        </div>
+        <div class="textinput">
+          <h2>
+          <p class="hide" type="checkbox" data_text>&nbsp;</p></h2>
+          <button class="remove_btn hide">&nbsp;&nbsp;<i class="fa-solid fa-trash-can"></i></button>
+        </div>
+      </div>
+    </div>
 
     <div class="bottom-row">
+
+      <!-- Left -->
       <div class="bottom-left">
         <i class="fa-solid fa-gear"></i>
       </div>
+
+      <!-- middle -->
       <div class="bottom-middle">
         <div class="content">
           <div class="quotearea">
+
             <span id="addquote" contenteditable="true">Time is Gold</span>
-            <p id="quote">"The greatest glory in living lies not in never falling, but in rising every time we fall."</p>
+              <p id="quote">"The greatest glory in living lies not in never falling, but in rising every time we fall."</p>
             <button id="clickquote" onclick="clickQuotes()" aria-label="add"><i class="fa-solid fa-circle-plus"></i></button>
             <button onclick="newQuote()"><i class="fa-solid fa-arrows-rotate"></i></button>
           </div>
         </div>
       </div>
+
+      <!-- Right -->
       <div class="bottom-right">  
         <div class="container" id="target">
-          <h2 id="myDropdown">TODO LIST</h2>
-		      <h3>New Todo</h3>
-		<p>
-			<input id="new-task" type="text" required aria-label="add"><button><i class="fa-solid fa-plus"></i></button>
-		</p>
 
-		<h3>Todo</h3>
-		<ul id="incomplete-tasks">
-			<li><input type="checkbox"><label>Go Code</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
-		</ul>
+          <h2 id="myDropdown">TODO</h2>
 
-		<h3>Done</h3>
-		<ul id="completed-tasks">
-			<li><input type="checkbox" checked><label>Drink many water</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
-		</ul>
+		      <h3>Add New</h3>
+		        <p>
+			        <input id="new-task" type="text" required aria-label="add"><button><i class="fa-solid fa-plus"></i></button>
+		        </p>
+
+		      <h3>Active</h3>
+		        <ul id="incomplete-tasks">
+			        <li><input type="checkbox"><label>Go Code</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+		        </ul>
+
+		      <h3>Completed</h3>
+		        <ul id="completed-tasks">
+			        <li><input type="checkbox" checked><label>Drink many water</label><input type="text"><button class="edit">Edit</button><button class="delete">Delete</button></li>
+            </ul>
 	      </div>
-          <!-- <main class="app">
-            <nav class="nav">
-              <a class="nav__item active dropntn" onclick="myFunction();">Inbox <i class="fa-solid fa-angle-down" ></i></a>
-                <div id="myDropdown" class="dropdown-content">
-                  <a href="#inbox">Inbox</a>
-                  <a href="#today">Today</a>
-                  <a href="#complete">Complete</a>
-                  <a href="#newlist">+ New List</a>
-                </div>
-            </nav>
-          </main> -->
-        <div id="inboxdropdown"></div>
         <span class="toggle" onclick="toggle_visibility('target');"><b>Todo</b></span>
       </div>
-      
     </div>
-    <script src="https://kit.fontawesome.com/f98ec32b38.js" crossorigin="anonymous"></script>
-    <script src="/js/main.js"></script>
   </body>
 </html>

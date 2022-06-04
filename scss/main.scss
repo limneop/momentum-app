@@ -41,41 +41,27 @@ input#focus {
   border: 0px solid;
   text-align: center;
   color: white;
+  border-bottom: 2px solid;
 }
 
-// .dropdown {
-//   position: relative;
-//   display: inline-block;
-//   background-color: #3498DB;
-// }
+.show {
+  display: block;
+}
 
-// .dropdown-content {
-//   display: none;
-//   position: absolute;
-//   top: 2.2rem;
-//   left: 1.3rem;
-//   background-color: #f1f1f1;
-//   min-width: 160px;
-//   font-size: 16px;
-//   text-align: left;
-//   overflow: auto;
-//   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-//   z-index: 1;
-// }
+.hide {
+  display: none;
+}
 
-// .dropdown-content a {
-//   color: black;
-//   padding: 12px 16px;
-//   text-decoration: none;
-//   display: block;
-// }
+.textinput > button {
+  background: transparent;
+  font-size: 3vmin;
+  border: 0px solid;
+}
 
-// .dropdown-content a:hover {
-//   background-color: #ddd;
-// }
-
-// .show {
-//   display: block;
-// }
+.textinput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @import 'mobile';

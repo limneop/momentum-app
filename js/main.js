@@ -1,143 +1,4 @@
-// DOM Elements
-const time = document.getElementById('time'),
-  greeting = document.getElementById('greeting'),
-  name = document.getElementById('name'),
-  focus = document.getElementById('focus');
-
-// Options
-const showAmPm = true;
-
-// Show Time
-function showTime() {
-  let today = new Date(),
-    hour = today.getHours(),
-    min = today.getMinutes(),
-    sec = today.getSeconds();
-  // Set AM or PM
-  const amPm = hour >= 12 ? 'PM' : 'AM';
-
-  // 12hr Format
-  hour = hour % 12 || 12;
-
-  // Output Time
-  time.innerHTML = `${hour}<span>:</span>${addZero(min)}`;
-
-  setTimeout(showTime, 1000);
-}
-
-// Add Zeros
-function addZero(n) {
-  return (parseInt(n, 10) < 10 ? '0' : '') + n;
-}
-
-// Set Background and Greeting
-function setBgGreet() {
-  let today = new Date(),
-    hour = today.getHours();
-
-  if (hour < 12) {
-    // Morning
-    document.body.style.backgroundImage = "url('https://i.ibb.co/7vDLJFb/morning.jpg')";
-    greeting.textContent = 'Good Morning, ';
-		document.body.style.color = 'black';
-
-  } else if (hour < 18) {
-    // Afternoon
-    document.body.style.backgroundImage = "url('https://images5.alphacoders.com/382/382894.jpg')";
-    greeting.textContent = 'Good Afternoon, ';
-    document.body.style.color = 'white';
-  } else {
-    // Evening
-    document.body.style.backgroundImage = "url('https://www.popsci.com/uploads/2018/12/12/A6CPB4I4X46PGDQFXZIINNFOUE.jpg?auto=webp')";
-    greeting.textContent = 'Good Evening, ';
-    document.body.style.color = 'white';
-  }
-}
-
-// Get Name
-function getName() {
-  if (localStorage.getItem('name') === null) {
-    name.textContent = '[Name]';
-  } else {
-    name.textContent = localStorage.getItem('name');
-  }
-}
-
-// Set Name
-function setName(e) {
-  if (e.type === 'keypress') {
-    // Make sure enter is pressed
-    if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('name', e.target.innerText);
-      name.blur();
-    }
-  } else {
-    localStorage.setItem('name', e.target.innerText);
-  }
-}
-
-// Get Focus
-function getFocus() {
-  if (localStorage.getItem('focus') === null) {
-    focus.textContent = '';
-  } else {
-    focus.textContent = localStorage.getItem('focus');
-  }
-}
-
-// Set Focus
-
-function setFocus(e) {
-  if (e.type === 'keypress') {
-    // Make sure enter is pressed
-    if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('focus', e.target.innerText);
-      focus.blur();
-    }
-  } else {
-    localStorage.setItem('focus', e.target.innerText);
-  }
-}
-
-// Get Add quote
-function getAddquote() {
-  if (localStorage.getItem('addquote') === null) {
-    addquote.textContent = 'Add Quote';
-  } else {
-    addquote.textContent = localStorage.getItem('addquote');
-  }
-}
-
-// Set Add quote
-function setAddquote(e) {
-  if (e.type === 'keypress') {
-    // Make sure enter is pressed
-    if (e.which == 13 || e.keyCode == 13) {
-      localStorage.setItem('addquote', e.target.innerText);
-      addquote.blur();
-    }
-  } else {
-    localStorage.setItem('addquote', e.target.innerText);
-  }
-}
-
-name.addEventListener('keypress', setName);
-name.addEventListener('blur', setName);
-focus.addEventListener('keypress', setFocus);
-focus.addEventListener('blur', setFocus);
-addquote.addEventListener('keypress', setAddquote);
-addquote.addEventListener('blur', setAddquote);
-
-// Run
-showTime();
-setBgGreet();
-getName();
-getFocus();
-getAddquote();
-
-
 // Quotes Generator
-
 const quoteText = document.querySelector(".quote"),
 quoteBtn = document.querySelector("button")
 
@@ -147,7 +8,7 @@ var quotes = [
   'If life were predictable it would cease to be life, and be without flavor. -Eleanor Roosevelt',
   'Life is what happens when you\'re busy making other plans. -John Lennon',]
 
-function newQuote() {
+function newQuote() {   
   var randomNumber = Math.floor(Math.random() * (quotes.length));
   document.getElementById('quote').innerHTML = quotes[randomNumber];
 }
@@ -160,7 +21,6 @@ function clickQuotes() {
 }
 
 
-
 // To-Do
 
 function toggle_visibility(id) {
@@ -168,11 +28,9 @@ function toggle_visibility(id) {
   e.style.display = ((e.style.display!='none') ? 'none' : 'block');
   }
 
-
-
 // Adding List
 var taskInput = document.getElementById("new-task"); //new-task
-var addButton = document.getElementsByTagName("button")[2]; //first button
+var addButton = document.getElementsByTagName("button")[3]; //first button
 var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
 var completedTasksHolder = document.getElementById("completed-tasks"); //completed-tasks
 
@@ -180,7 +38,6 @@ var completedTasksHolder = document.getElementById("completed-tasks"); //complet
 var createNewTaskElement = function(taskString) {
 	//Create List Item
 	var listItem = document.createElement("li");
-
 	//input (checkbox)
 	var checkBox = document.createElement("input"); // checkbox
 	//label
