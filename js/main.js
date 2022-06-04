@@ -29,24 +29,20 @@ function toggle_visibility(id) {
   }
 
 // Adding List
-var taskInput = document.getElementById("new-task"); //new-task
-var addButton = document.getElementsByTagName("button")[3]; //first button
-var incompleteTasksHolder = document.getElementById("incomplete-tasks"); //incomplete-tasks
-var completedTasksHolder = document.getElementById("completed-tasks"); //completed-tasks
+
+var taskInput = document.getElementById("new-task"); 
+var addButton = document.getElementsByTagName("button")[3]; 
+var incompleteTasksHolder = document.getElementById("incomplete-tasks"); 
+var completedTasksHolder = document.getElementById("completed-tasks"); 
 
 //New Task List Item	
 var createNewTaskElement = function(taskString) {
-	//Create List Item
+	
 	var listItem = document.createElement("li");
-	//input (checkbox)
-	var checkBox = document.createElement("input"); // checkbox
-	//label
+	var checkBox = document.createElement("input");
 	var label = document.createElement("label");
-	//input (text)
-	var editInput = document.createElement("input"); // text
-	//button.edit
+	var editInput = document.createElement("input");
 	var editButton = document.createElement("button");
-	//button.delete
 	var deleteButton = document.createElement("button");
 
 	//Each element needs modifying

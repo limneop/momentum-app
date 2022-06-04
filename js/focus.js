@@ -1,8 +1,8 @@
-const focusTask = document.querySelector('[data_todays_input]')
-const focusInput = document.querySelector('div.focus_container_entry input[type=text')
-const focusText = document.querySelector('[data_text]')
-const focusRemoveBtn = document.querySelector('div.focus_container_entry button')
-const focusLocalStorageKey = 'focus'
+var focusTask = document.querySelector('[data_todays_input]')
+var focusInput = document.querySelector('div.focus_container_entry input[type=text')
+var focusText = document.querySelector('[data_text]')
+var focusRemoveBtn = document.querySelector('div.focus_container_entry button')
+var focusLocalStorageKey = 'focus'
 
 focusInput.addEventListener('keypress', (e) => {
   let focusInputValue = focusInput.value
@@ -13,6 +13,16 @@ focusInput.addEventListener('keypress', (e) => {
   }
 })
 
+var getFocus = (itemKey) => {
+  let focusItem = localStorage.getItem(itemKey)
+
+  if (focusItem !== null) {
+    focusElementsToggle()
+    focusText.textContent = focusItem
+    focusTask.textContent = 'TASK'
+  }
+}
+
 focusRemoveBtn.addEventListener('click', () => {
   localStorage.removeItem(focusLocalStorageKey)
   focusElementsToggle()
@@ -20,17 +30,7 @@ focusRemoveBtn.addEventListener('click', () => {
   focusInput.value = ''
 })
 
-const getFocus = (itemKey) => {
-  let focusItem = localStorage.getItem(itemKey)
-
-  if (focusItem !== null) {
-    focusElementsToggle()
-    focusText.textContent = focusItem
-    focusTask.textContent = 'TODAY'
-  }
-}
-
-const focusElementsToggle = () => {
+var focusElementsToggle = () => {
   focusInput.classList.toggle('hide')
   focusText.classList.toggle('hide')
   focusRemoveBtn.classList.toggle('hide')
