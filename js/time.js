@@ -43,7 +43,7 @@ function setBgGreet() {
 
   } else if (hour < 18) {
     // Afternoon
-    document.body.style.backgroundImage = "url('https://images5.alphacoders.com/382/382894.jpg')";
+    document.body.style.backgroundImage = "url('https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77701335565.jpg')";
     greeting.textContent = 'Good Afternoon, ';
     document.body.style.color = 'white';
   } else {
